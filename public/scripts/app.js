@@ -69,4 +69,21 @@ const shortModern = (n) => {
         console.log((++i % 3 ? "" : "fizz") + (i % 5 ? "" : "buzz") || i);
     }
 };
-shortModern(101);
+// SECTION - Chessboard
+const createChess = (x) => {
+    let size = x;
+    let string = '';
+    for (let i = 0; i < x; i++) {
+        for (let b = 0; b < x; b++) {
+            if ((i + b) % 2 === 0) {
+                string += " ";
+            }
+            else {
+                string += "#";
+            }
+        }
+        string += `\n`;
+    }
+    console.log(string);
+};
+createChess(20);
