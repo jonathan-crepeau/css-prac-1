@@ -32,9 +32,18 @@ const checkANum = (inputNum) => {
         case (inputNum > 100):
             celebrateBigNum(inputNum);
             break;
+        default:
+            console.log('Unknown number type!');
+            break;
     }
 };
-checkANum(7);
-checkANum(12);
-checkANum(75);
-checkANum(300);
+// checkANum(7);
+// checkANum(12);
+// checkANum(75);
+// checkANum(300);
+// SECTION - Looping A Triangle
+let toPrintVal = '#';
+for (let i = 0; i < 7; i++) {
+    console.log(toPrintVal);
+    toPrintVal += '#';
+}
