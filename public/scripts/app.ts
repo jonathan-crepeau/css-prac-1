@@ -90,18 +90,35 @@ const fizzbuzzIncAfterthought = (n) => {
 
 // SECTION - Chessboard
 
-const createChess = (x) => {
-    let size = x;
+// NOTE - In reality, you almost always want to avoid a loop within a loop (alarm bells should go off). Include TS for number declaration, and have parameter be called 'size':
+
+const createChessBoard = (size: number) => {
     let string = '';
-    for (let i = 0 ; i < x; i++) {
-        for (let b = 0; b < x; b++) {
-            if ((i + b) % 2 === 0) {
-                string += " ";
-            } else {
-                string += "#"
-            }
+    for (let i = 0; i < size; i++) {
+        for (let b = 0; b < size; b++) {
+            if ((i + b) % 2 === 0) string += " ";
+            else string+= "#";
         }
-        string += `\n`;
+        string += '\n';
     }
     console.log(string);
 }
+
+createChessBoard(6);
+
+
+// const createChess = (x) => {
+//     let size = x;
+//     let string = '';
+//     for (let i = 0 ; i < x; i++) {
+//         for (let b = 0; b < x; b++) {
+//             if ((i + b) % 2 === 0) {
+//                 string += " ";
+//             } else {
+//                 string += "#"
+//             }
+//         }
+//         string += `\n`;
+//     }
+//     console.log(string);
+// }
