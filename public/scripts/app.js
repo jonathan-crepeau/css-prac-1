@@ -64,9 +64,18 @@ const fizzbuzz = () => {
         }
     }
 };
-const shortModern = (n) => {
-    for (let i = 0; i < n;) {
-        console.log((++i % 3 ? "" : "fizz") + (i % 5 ? "" : "buzz") || i);
+// NOTE - Version I found on stack overflow. Helpful for understanding how any returned value of zero (0) will evaluate to falsy (either 'fizz' or 'buzz'). Unclear if there's any benefit to not including an afterthought in the for loop and instead incrementing the i variable in the console.log statement:
+// const shortModern = (n) => {
+//     for (let i = 0; i < n; ) {
+//         console.log(
+//             (++i % 3 ? "" : "fizz") + (i % 5 ? "" : "buzz") || i            
+//         );
+//     }
+// }
+// NOTE - In comparison, this for loop includes an afterthought to use a postfix operator to increment the i variable. Notice that because it's the postfix operator (vs. the prefix operator above), this for loop initializes the variable i = 1 instead of i = 0 if we want the console.log statement to start printing at 1 instead of 0:
+const fizzbuzzIncAfterthought = (n) => {
+    for (let i = 1; i < n; i++) {
+        console.log((i % 3 ? "" : "fizz") + (i % 5 ? "" : "buzz") || i);
     }
 };
 // SECTION - Chessboard
@@ -86,4 +95,3 @@ const createChess = (x) => {
     }
     console.log(string);
 };
-createChess(20);
